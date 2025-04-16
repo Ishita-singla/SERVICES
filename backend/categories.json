@@ -1,0 +1,156 @@
+[
+    {
+      "name": "Women's Salon",
+      "image":"https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1678864013225-bfc1de.jpeg",
+      "subcategories": [
+        {
+          "name": "Salon for Women",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1672324465583-2688a9.jpeg"
+        },
+        {
+          "name": "Spa for Women",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1673936988512-276a19.jpeg"
+        },
+        {
+          "name": "Hair Studio for Women",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728839468364-90b0dc.jpeg"
+        },
+        {
+          "name": "MakeUp &Styling studio",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1669023257508-ffd582.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Men's Salon & Massage",
+      "image":"https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677505426782-4e2d0a.jpeg",
+      "subcategories": [
+        {
+          "name": "Salon for men and Kids ",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1677505426782-4e2d0a.jpeg"
+        },
+        {
+          "name": "Massage for men",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1674623814769-eeca92.jpeg"
+        }
+        
+      ]
+    },
+    {
+      "name": "AC & Appliance Repair",
+      "image":"https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1741326936056-c3a39a.jpeg",
+      "subcategories": [
+        {
+          "name": "AC",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1741326936056-c3a39a.jpeg"
+        },
+        {
+          "name": "Washing Machine",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1741326898650-c51e1a.jpeg"
+        }
+      ],
+      "sections":[
+        {
+          "title": "Kitchen appliaances",
+          "items":[
+            {
+                     "name":"Water Purifier",
+                     "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1741326909504-7d58c7.jpeg"
+        },
+        {
+          "name": "Refrigerator",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1741326925311-7a1126.jpeg"
+        }
+      ]
+    },
+
+    {
+      "title":"Buy Native Products",
+      "items":[{
+
+         "name": "Native Smart Purifier",
+         "image":"https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1741326909504-7d58c7.jpeg"
+      },
+      
+        {
+          "name": "Native Smart Locks",
+          "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1741326909504-7d58c7.jpeg"
+        }
+      ]
+    }
+  ]
+},
+{
+  "name": "Cleaning ",
+  "image":"https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1681711961404-75dfec.jpeg",
+  "subcategories": [
+    {
+      "name": "Bathroom Cleaning",
+      "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900642258-b12524.jpeg"
+    },
+    {
+      "name": "Kitchen Cleaning",
+      "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900636163-e44538.jpeg"
+    },
+    {
+      "name": "Full House Cleaning",
+      "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900634115-e18640.jpeg"
+    }
+  ]
+},
+  
+    {
+      "name": "Pest Control",
+      "image": "https://plus.unsplash.com/premium_photo-1682126104327-ef7d5f260cf7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVzdCUyMGNvbnRyb2x8ZW58MHx8MHx8fDA%3D",
+      "subcategories": [
+         {
+                 "name":"Coackroach,Ant & General Pest Control",
+                 "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900622918-72accc.jpeg"
+    },
+    {
+      "name": "Termite Control",
+      "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900625197-f96e53.jpeg"
+    },
+    {
+      "name": "Bed Bugs Control",
+      "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1728900627636-876b91.jpeg"
+    }
+  ]
+}, 
+
+
+{
+  "name": "Electrician, Plumber &Carpenter",
+  "image":"https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_56,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/home-screen/1678868062337-08bfc2.jpeg",
+  "subcategories": [
+    {
+      "name": "Electrician",
+      "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1699868754554-a5c5c9.jpeg"
+    },
+    {
+      "name": "Carpenetr",
+      "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1722431287847-8acb8c.jpeg"
+    }
+  ],
+  "sections":[
+    {
+      "title": "Installations & other services",
+      "items":[
+        {
+                 "name":"Fan Installation",
+                 "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1692962989852-d05ea9.jpeg"
+    },
+    {
+      "name": "TV & Home Theatre",
+      "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1722430043982-5cf946.jpeg"
+    },
+    {
+      "name": "Furniture Assembly",
+      "image": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_48,dpr_2,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1719382683826-36ec97.jpeg"
+    }
+  ]
+}
+]
+}
+  ]
+  
