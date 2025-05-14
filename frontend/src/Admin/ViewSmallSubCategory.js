@@ -9,7 +9,7 @@ const ViewSmallSubCategory = () => {
 
   // Fetch categories from API
   useEffect(() => {
-    fetch("http://localhost:5000/api/viewcategory")
+    fetch("http://localhost:5001/api/viewcategory")
       .then(response => response.json())
       .then(data => setCategories(data))
       .catch(err => console.log("Error fetching categories:", err));
@@ -20,7 +20,7 @@ const ViewSmallSubCategory = () => {
     const formData = JSON.stringify({ categoryid, subcategoryid,smallsubcategoryid });
 
     try {
-      const response = await fetch("http://localhost:5000/api/deletesmallsubcategory", {
+      const response = await fetch("http://localhost:5001/api/deletesmallsubcategory", {
         headers: { "Content-Type": "application/json" },
         method: "POST",
         body: formData,
@@ -56,7 +56,7 @@ const ViewSmallSubCategory = () => {
 
   return (
     <div className="container mt-4">
-      <h1 className="text-center mb-4">View Sub-Categories</h1>
+      <h1 className="text-center mb-4">View Small Sub-Categories</h1>
       <div className="table-responsive">
         <table className="table table-striped table-hover table-bordered text-center">
           <thead className="table-dark">

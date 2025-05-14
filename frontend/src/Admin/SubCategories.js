@@ -143,7 +143,7 @@
 //         }
 //         alert("Submitting Category...");
 //         try {
-//             const response = await fetch("http://localhost:5000/api/insertcategory", {
+//             const response = await fetch("http://localhost:5001/api/insertcategory", {
 //                 method: "POST",
 //                 headers: { "Content-Type": "application/json" },
 //                 body: JSON.stringify({ categoryname: categorytitle, categoryimage: photourl }), // Fix Here
@@ -259,7 +259,7 @@ const SubCategories = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/categories");
+      const response = await fetch("http://localhost:5001/api/categories");
       const data = await response.json();
       setCategories(data); // Store categories in state
     } catch (error) {
@@ -315,7 +315,7 @@ const SubCategories = () => {
     }
     alert("Submitting Sub-Category...");
     try {
-      const response = await fetch("http://localhost:5000/api/insertsubcategory", {
+      const response = await fetch("http://localhost:5001/api/insertsubcategory", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 

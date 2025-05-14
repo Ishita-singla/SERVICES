@@ -132,7 +132,7 @@ const Getorders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/getorders");
+      const res = await fetch("http://localhost:5001/api/getorders");
       const data = await res.json();
       setOrders(data.orders);
     } catch (err) {
@@ -145,7 +145,7 @@ const Getorders = () => {
 
   const handleReject = async (orderId) => {
     setLoadingOrderId(orderId);
-    await fetch(`http://localhost:5000/api/updateorder/${orderId}`, {
+    await fetch(`http://localhost:5001/api/updateorder/${orderId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ deliveryStatus: "Rejected" })
@@ -183,7 +183,7 @@ const Getorders = () => {
       deliveryDate.setDate(deliveryDate.getDate() + 7);
     }
   
-    await fetch(`http://localhost:5000/api/updateorder/${orderId}`, {
+    await fetch(`http://localhost:5001/api/updateorder/${orderId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

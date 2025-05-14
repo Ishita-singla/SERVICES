@@ -9,7 +9,7 @@ const ViewSubCategory = () => {
 
   // Fetch categories from API
   useEffect(() => {
-    fetch("http://localhost:5000/api/viewcategory")
+    fetch("http://localhost:5001/api/viewcategory")
       .then(response => response.json())
       .then(data => setCategories(data))
       .catch(err => console.log("Error fetching categories:", err));
@@ -20,7 +20,7 @@ const ViewSubCategory = () => {
     const formData = JSON.stringify({ categoryid, subcategoryid });
 
     try {
-      const response = await fetch("http://localhost:5000/api/deletesubcategory", {
+      const response = await fetch("http://localhost:5001/api/deletesubcategory", {
         headers: { "Content-Type": "application/json" },
         method: "POST",
         body: formData,

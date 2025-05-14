@@ -8,7 +8,7 @@
 //   }, []);
 
 //   const fetchOrders = async () => {
-//     const res = await fetch("http://localhost:5000/api/orderplaced",{
+//     const res = await fetch("http://localhost:5001/api/orderplaced",{
 //         method: "PUT",
 //         headers: {
 //           "Content-Type": "application/json",
@@ -21,7 +21,7 @@
 
 //   const setDeliveryDate = async (orderId, deliveryDate) => {
 //     try {
-//       const response = await fetch(`http://localhost:5000/api/set-delivery-date/${orderId}`, {
+//       const response = await fetch(`http://localhost:5001/api/set-delivery-date/${orderId}`, {
 //         method: "PUT",
 //         headers: {
 //           "Content-Type": "application/json",

@@ -1,10 +1,9 @@
 const express = require("express");
 const {category,insertcategory,insertsubcategory, getSubcategories, insertsmallsubcategory, viewCategory, deletecategory, deleteSubCategory, deleteSmallSubCategory, getCategoryById, updateCategory, getSubCategoryinUpdate, updatesubCategory, getSmallSubCategoryinUpdate, updatesmallsubCategory, getSubsmallcategoriesinfront} = require("../Controllers/CategoryController");
 const { Addtocart, viewAddtocart, deleteCartItem } = require("../Controllers/AddToCartController");
-const placeorder = require("../Controllers/OrderplacedController");
 const  { getAllOrders, updateOrder, getUserOrders}  = require("../Controllers/ViewAdminOrders");
-
-const { getUserCount } = require("../Controllers/GetUserCount");
+const{placeorder, updatePaymentStatus}=require("../Controllers/OrderplacedController")
+const { getUserCount, getUser, countBlogs, getOrderStatusCount } = require("../Controllers/GetUserCount");
 
 
 const router = express.Router();
@@ -36,6 +35,8 @@ router.delete("/deleteitem/:id", deleteCartItem);
 
 
 router.post("/orderplaced",placeorder);
+router.put("/updatepayment/:orderId", updatePaymentStatus);
+
 
 // router.put("/set-delivery-date/:orderId", setDeliveryDate);
 
@@ -52,6 +53,15 @@ router.get("/getorders", getAllOrders);
 router.get("/user/:userId", getUserOrders);
 
 
+router.get("/viewusers",getUser);
 
-router.get('/count-users', getUserCount);
+
+router.get("/count-blogs", countBlogs); // 👈 Add this line
+router.get("/order-status-count", getOrderStatusCount); // 👈 New route
+
+
+
+
+
+
 module.exports = router;

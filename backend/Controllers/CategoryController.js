@@ -37,135 +37,7 @@ const category = async (req, res) => {
 //       res.status(500).json({ message: "Error fetching category" });
 //   }
 // };
-const getCategoryById = async (req, res) => {
-  try {
-    console.log("Request Body:", req.body);  // ✅ Debugging
-    const { id } = req.body; // ✅ Extract id safely
 
-    if (!id) {
-      return res.status(400).json({ message: "ID is required" });
-    }
-
-    const category = await CategoryModel.findById(id);
-
-    if (!category) {
-      return res.status(404).json({ message: "Category not found" });
-    }
-
-    res.status(200).json(category);
-  } catch (err) {
-    console.log("Error occurred while finding data:", err);
-    return res.status(500).json({ message: "Error while fetching category", error: err.message });
-  }
-};
-const updateCategory=async(req,res)=>{
-  try{
-    
-    await CategoryModel.updateOne({_id:req.body.id},req.body)
-    res.status(200).json({message:"ok"})
-  }catch(err){
-    res.status(500).json({message:"error"})
-    console.log(err);
-  }
-
-
-}
-
-const getSubCategoryinUpdate = async (req, res) => {
-  try {
-    console.log("Request Body:", req.body);  // ✅ Debugging
-    const { Categoryid,Subcategoryid } = req.body; // ✅ Extract id safely
-    
-    const category = await CategoryModel.findOne({_id:Categoryid});
-    console.log(category);
-    
-    const subcategory=category.subcategories.find(sub=>sub._id.toString()===Subcategoryid);
-
-    if (!subcategory) {
-      return res.status(404).json({ message: "Category not found" });
-    }
-
-    res.status(200).json(subcategory);
-  } catch (err) {
-    console.log("Error occurred while finding data:", err);
-    return res.status(500).json({ message: "Error while fetching category", error: err.message });
-  }
-};
-const updatesubCategory = async (req, res) => {
-  try {
-    const { categoryid, subcategoryid, subcategoryname, subcategoryimage, content } = req.body;
-
-    // Category dhoondo
-    const category = await CategoryModel.findById(categoryid);
-    if (!category) return res.status(404).json({ message: "Category not found" });
-
-    // Subcategory find karke update karo
-    const subcategory = category.subcategories.id(subcategoryid);
-    if (!subcategory) return res.status(404).json({ message: "Subcategory not found" });
-
-    subcategory.subcategoryname = subcategoryname;
-    subcategory.subcategoryimage = subcategoryimage;
-    subcategory.content = content;
-
-    await category.save();
-
-    res.status(200).json({ message: "Subcategory updated successfully", subcategory });
-
-  } catch (error) {
-    res.status(500).json({ message: "Error updating subcategory" });
-  }
-};
-const getSmallSubCategoryinUpdate = async (req, res) => {
-  try {
-    console.log("Request Body:", req.body);  // ✅ Debugging
-    const { Categoryid,Subcategoryid,SmallSubcategoryid } = req.body; // ✅ Extract id safely
-    
-    const category = await CategoryModel.findOne({_id:Categoryid});
-    console.log(category);
-    
-    const subcategory=category.subcategories.find(sub=>sub._id.toString()===Subcategoryid);
-    const smallsubcategory=subcategory.smallsubcategories.find(sub=>sub._id.toString()===SmallSubcategoryid);
-
-
-    if (!smallsubcategory) {
-      return res.status(404).json({ message: "Category not found" });
-    }
-
-    res.status(200).json(smallsubcategory);
-  } catch (err) {
-    console.log("Error occurred while finding data:", err);
-    return res.status(500).json({ message: "Error while fetching category", error: err.message });
-  }
-};
-const updatesmallsubCategory = async (req, res) => {
-  try {
-    const { categoryid, subcategoryid,smallsubcategoryid, smallsubcategoryname, smallsubcategoryimage, smallsubcategorycontent,Price} = req.body;
-
-    // Category dhoondo
-    const category = await CategoryModel.findById(categoryid);
-    if (!category) return res.status(404).json({ message: "Category not found" });
-
-    // Subcategory find karke update karo
-    const subcategory = category.subcategories.id(subcategoryid);
-    if (!subcategory) return res.status(404).json({ message: "Subcategory not found" });
-
-    const smallsubcategory = subcategory.smallsubcategories.id(smallsubcategoryid);
-    if (!smallsubcategory) return res.status(404).json({ message: "smallSubcategory not found" });
-
-    smallsubcategory.smallsubcategoryname =  smallsubcategoryname;
-    smallsubcategory.smallsubcategoryimage = smallsubcategoryimage;
-    smallsubcategory.smallsubcategorycontent = smallsubcategorycontent;
-    smallsubcategory.Price = Price;
-
-
-    await category.save();
-
-    res.status(200).json({ message: "Subcategory updated successfully", smallsubcategory });
-
-  } catch (error) {
-    res.status(500).json({ message: "Error updating smallsubcategory" });
-  }
-};
 
 
 
@@ -190,43 +62,10 @@ const updatesmallsubCategory = async (req, res) => {
 //     }
 //   };
 
-const insertcategory = async (req, res) => {
-  try {
-      const { categoryname, categoryimage } = req.body;
-      if (!categoryname || !categoryimage) {
-          return res.status(400).json({ message: "All fields are required" });
-      }
 
-      const newcategory = new CategoryModel({ categoryname, categoryimage });
-      await newcategory.save();
-      res.status(201).json({ message: "Category added successfully!", newcategory });
-  } catch (error) {
-      console.error("Error creating category:", error);
-      res.status(500).json({ message: error.message || "Error creating category" });
-  }
-};
 
-const viewCategory=async(req,res)=>{
-  try{
-    const data = await CategoryModel.find();
-  res.json(data)
-  console.log("data fetch from database");
-  }
-  catch(err)
-  {
-    console.log("error occured while finding the data: "+err);
-  }
-}
-const deletecategory=async(req,res)=>{
-  try{
-    await CategoryModel.deleteOne({_id:req.body.categoryid})
-    res.status(200).json({message:"ok"})
-  }
-  catch(err){
-    res.status(500).json({message:"error"})
-    console.log(err);
-  }
-}
+
+
 
 // const insertsubcategory = async (req, res) => {
 //   try {
@@ -244,32 +83,7 @@ const deletecategory=async(req,res)=>{
 //   }
 // }
 
-const insertsubcategory = async (req, res) => {
-  try {
-    const { categoryname, subcategoryname, subcategoryimage, content } = req.body;
 
-    // Category find karo
-    const category = await CategoryModel.findOne({ categoryname });
-
-    if (!category) {
-      return res.status(404).json({ message: "Category not found" });
-    }
-
-    // Nayi subcategory add karo
-    category.subcategories.push({
-      subcategoryname,
-      subcategoryimage,
-      content,
-    });
-
-    // Save karo
-    await category.save();
-
-    res.status(201).json({ message: "Sub-category added successfully!" });
-  } catch (error) {
-    res.status(500).json({ error: "Error adding sub-category" });
-  }
-};
 // const deleteSubCategory = async (req, res) => {
 //   try {
 //     const { categoryid, subcategoryid } = req.body;
@@ -305,6 +119,108 @@ const insertsubcategory = async (req, res) => {
 //     res.status(500).json({ message: "Internal Server Error" });
 //   }
 // };
+
+const insertcategory = async (req, res) => {
+  try {
+      const { categoryname, categoryimage } = req.body;
+      if (!categoryname || !categoryimage) {
+          return res.status(400).json({ message: "All fields are required" });
+      }
+
+      const newcategory = new CategoryModel({ categoryname, categoryimage });
+      await newcategory.save();
+      res.status(201).json({ message: "Category added successfully!", newcategory });
+  } catch (error) {
+      console.error("Error creating category:", error);
+      res.status(500).json({ message: error.message || "Error creating category" });
+  }
+};
+const insertsubcategory = async (req, res) => {
+  try {
+    const { categoryname, subcategoryname, subcategoryimage, content } = req.body;
+
+    // Category find karo
+    const category = await CategoryModel.findOne({ categoryname });
+
+    if (!category) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+
+    // Nayi subcategory add karo
+    category.subcategories.push({
+      subcategoryname,
+      subcategoryimage,
+      content,
+    });
+
+    // Save karo
+    await category.save();
+
+    res.status(201).json({ message: "Sub-category added successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: "Error adding sub-category" });
+  }
+};
+const insertsmallsubcategory=async(req,res)=>{
+  try {
+    const { categoryname, subcategoryname,smallsubcategoryname, smallsubcategoryimage, smallsubcategorycontent,Price } = req.body;
+
+    // Category find karo
+    const category = await CategoryModel.findOne({ categoryname });
+
+    if (!category) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+    // ✅ Ab subcategory find karo
+    const subcategory = category.subcategories.find(
+      (sub) => sub.subcategoryname === subcategoryname
+    );
+
+    if (!subcategory) {
+      return res.status(404).json({ message: "Subcategory not found" });
+    }
+
+    // ✅ Small subcategory ko push karo
+    subcategory.smallsubcategories.push({
+      smallsubcategoryname,
+      smallsubcategoryimage,
+      smallsubcategorycontent,
+      Price
+    });
+
+    // ✅ Save the category with updated subcategory
+    await category.save();
+
+    res.status(201).json({ message: "Small sub-category added successfully!" });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "Error adding small sub-category" });
+  }
+};
+
+const viewCategory=async(req,res)=>{
+  try{
+    const data = await CategoryModel.find();
+  res.json(data)
+  console.log("data fetch from database");
+  }
+  catch(err)
+  {
+    console.log("error occured while finding the data: "+err);
+  }
+}
+
+
+const deletecategory=async(req,res)=>{
+  try{
+    await CategoryModel.deleteOne({_id:req.body.categoryid})
+    res.status(200).json({message:"ok"})
+  }
+  catch(err){
+    res.status(500).json({message:"error"})
+    console.log(err);
+  }
+}
 
 const deleteSubCategory = async (req, res) => {
   try {
@@ -367,6 +283,140 @@ const deleteSmallSubCategory = async (req, res) => {
   }
 };
 
+const updateCategory=async(req,res)=>{
+  try{
+    
+    await CategoryModel.updateOne({_id:req.body.id},req.body)
+    res.status(200).json({message:"ok"})
+  }catch(err){
+    res.status(500).json({message:"error"})
+    console.log(err);
+  }
+
+
+}
+
+const updatesubCategory = async (req, res) => {
+  try {
+    const { categoryid, subcategoryid, subcategoryname, subcategoryimage, content } = req.body;
+
+    // Category dhoondo
+    const category = await CategoryModel.findById(categoryid);
+    if (!category) return res.status(404).json({ message: "Category not found" });
+
+    // Subcategory find karke update karo
+    const subcategory = category.subcategories.id(subcategoryid);
+    if (!subcategory) return res.status(404).json({ message: "Subcategory not found" });
+
+    subcategory.subcategoryname = subcategoryname;
+    subcategory.subcategoryimage = subcategoryimage;
+    subcategory.content = content;
+
+    await category.save();
+
+    res.status(200).json({ message: "Subcategory updated successfully", subcategory });
+
+  } catch (error) {
+    res.status(500).json({ message: "Error updating subcategory" });
+  }
+};
+const updatesmallsubCategory = async (req, res) => {
+  try {
+    const { categoryid, subcategoryid,smallsubcategoryid, smallsubcategoryname, smallsubcategoryimage, smallsubcategorycontent,Price} = req.body;
+
+    // Category dhoondo
+    const category = await CategoryModel.findById(categoryid);
+    if (!category) return res.status(404).json({ message: "Category not found" });
+
+    // Subcategory find karke update karo
+    const subcategory = category.subcategories.id(subcategoryid);
+    if (!subcategory) return res.status(404).json({ message: "Subcategory not found" });
+
+    const smallsubcategory = subcategory.smallsubcategories.id(smallsubcategoryid);
+    if (!smallsubcategory) return res.status(404).json({ message: "smallSubcategory not found" });
+
+    smallsubcategory.smallsubcategoryname =  smallsubcategoryname;
+    smallsubcategory.smallsubcategoryimage = smallsubcategoryimage;
+    smallsubcategory.smallsubcategorycontent = smallsubcategorycontent;
+    smallsubcategory.Price = Price;
+
+
+    await category.save();
+
+    res.status(200).json({ message: "Subcategory updated successfully", smallsubcategory });
+
+  } catch (error) {
+    res.status(500).json({ message: "Error updating smallsubcategory" });
+  }
+};
+
+
+const getCategoryById = async (req, res) => {
+  try {
+    console.log("Request Body:", req.body);  // ✅ Debugging
+    const { id } = req.body; // ✅ Extract id safely
+
+    if (!id) {
+      return res.status(400).json({ message: "ID is required" });
+    }
+
+    const category = await CategoryModel.findById(id);
+
+    if (!category) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+
+    res.status(200).json(category);
+  } catch (err) {
+    console.log("Error occurred while finding data:", err);
+    return res.status(500).json({ message: "Error while fetching category", error: err.message });
+  }
+};
+
+const getSubCategoryinUpdate = async (req, res) => {
+  try {
+    console.log("Request Body:", req.body);  // ✅ Debugging
+    const { Categoryid,Subcategoryid } = req.body; // ✅ Extract id safely
+    
+    const category = await CategoryModel.findOne({_id:Categoryid});
+    console.log(category);
+    
+    const subcategory=category.subcategories.find(sub=>sub._id.toString()===Subcategoryid);
+
+    if (!subcategory) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+
+    res.status(200).json(subcategory);
+  } catch (err) {
+    console.log("Error occurred while finding data:", err);
+    return res.status(500).json({ message: "Error while fetching category", error: err.message });
+  }
+};
+
+const getSmallSubCategoryinUpdate = async (req, res) => {
+  try {
+    console.log("Request Body:", req.body);  // ✅ Debugging
+    const { Categoryid,Subcategoryid,SmallSubcategoryid } = req.body; // ✅ Extract id safely
+    
+    const category = await CategoryModel.findOne({_id:Categoryid});
+    console.log(category);
+    
+    const subcategory=category.subcategories.find(sub=>sub._id.toString()===Subcategoryid);
+    const smallsubcategory=subcategory.smallsubcategories.find(sub=>sub._id.toString()===SmallSubcategoryid);
+
+
+    if (!smallsubcategory) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+
+    res.status(200).json(smallsubcategory);
+  } catch (err) {
+    console.log("Error occurred while finding data:", err);
+    return res.status(500).json({ message: "Error while fetching category", error: err.message });
+  }
+};
+
 //  sub._id MongoDB ObjectId hota hai (jo ek object format me hota hai).
 
 // .toString() lagane se ObjectId ko ek string me convert kar diya jata hai.
@@ -394,42 +444,7 @@ const getSubcategories = async (req, res) => {
   }
 };
 
-const insertsmallsubcategory=async(req,res)=>{
-  try {
-    const { categoryname, subcategoryname,smallsubcategoryname, smallsubcategoryimage, smallsubcategorycontent,Price } = req.body;
 
-    // Category find karo
-    const category = await CategoryModel.findOne({ categoryname });
-
-    if (!category) {
-      return res.status(404).json({ message: "Category not found" });
-    }
-    // ✅ Ab subcategory find karo
-    const subcategory = category.subcategories.find(
-      (sub) => sub.subcategoryname === subcategoryname
-    );
-
-    if (!subcategory) {
-      return res.status(404).json({ message: "Subcategory not found" });
-    }
-
-    // ✅ Small subcategory ko push karo
-    subcategory.smallsubcategories.push({
-      smallsubcategoryname,
-      smallsubcategoryimage,
-      smallsubcategorycontent,
-      Price
-    });
-
-    // ✅ Save the category with updated subcategory
-    await category.save();
-
-    res.status(201).json({ message: "Small sub-category added successfully!" });
-  } catch (error) {
-    console.error("Error:", error);
-    res.status(500).json({ error: "Error adding small sub-category" });
-  }
-};
  // Ensure correct path
 
 // const updateCategory = async (req, res) => {

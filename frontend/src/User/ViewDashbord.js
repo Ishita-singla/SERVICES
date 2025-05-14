@@ -5,7 +5,7 @@ const ViewDashbord = () => {
   
     const [items,setitems]=useState([]);
     useEffect(()=>{
-        fetch("http://localhost:5000/api/viewdashbord")
+        fetch("http://localhost:5001/api/viewdashbord")
         .then(response=>response.json())
        
         .then(data=>setitems(data))
@@ -17,7 +17,7 @@ const ViewDashbord = () => {
         dataid:dataid,
       })
       try{
-        const response=await fetch("http://localhost:5000/api/deletedata",{
+        const response=await fetch("http://localhost:5001/api/deletedata",{
           headers:{"Content-type":"application/json"},
           method:"Post",
           body:formdata

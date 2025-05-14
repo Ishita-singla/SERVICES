@@ -113,7 +113,7 @@ const SmallSubCategories = () => {
 
   // Fetch categories when component loads
   useEffect(() => {
-    fetch("http://localhost:5000/api/categories")
+    fetch("http://localhost:5001/api/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error("Error fetching categories:", err));
@@ -123,7 +123,7 @@ const SmallSubCategories = () => {
   // Fetch subcategories when category changes
 useEffect(() => {
   if (selectedCategory) {
-    fetch(`http://localhost:5000/api/subcategories/${selectedCategory}`)
+    fetch(`http://localhost:5001/api/subcategories/${selectedCategory}`)
       .then((res) => res.json())
       .then((data) => setSubCategories(data)) // Sahi data set ho raha hai
       .catch((err) => console.error("Error fetching subcategories:", err));
@@ -187,7 +187,7 @@ const handleSubmit = async (e) => {
 
   setLoading(true); // ✅ Loading start kar diya
   try {
-    const response = await fetch("http://localhost:5000/api/insertsmallsubcategory", {
+    const response = await fetch("http://localhost:5001/api/insertsmallsubcategory", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

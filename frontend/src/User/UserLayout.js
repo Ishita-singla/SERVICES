@@ -29,7 +29,7 @@ const UserLayout = () => {
     }, []);
     const fetchUserPhoto = async (email) => {
         try {
-          const response = await fetch("http://localhost:5000/api/getuserphoto", {
+          const response = await fetch("http://localhost:5001/api/getuserphoto", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ Email: email }),
@@ -221,7 +221,7 @@ const UserLayout = () => {
         </li>
       </ul>
       <hr />
-      <div className="dropdown pb-3">
+      <div className="dropdown pb-3 ">
         <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
           <img src={photo || defaultPhoto} alt="User" width="30" height="30" className="rounded-circle" />
           <span className="d-none d-sm-inline mx-2">{item.Email}</span>

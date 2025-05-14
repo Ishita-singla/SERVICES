@@ -7,7 +7,7 @@
 //   useEffect(() => {
 //     const fetchOrders = async () => {
 //       try {
-//         const res = await fetch(`http://localhost:5000/api/user/${userId}`);
+//         const res = await fetch(`http://localhost:5001/api/user/${userId}`);
 //         const data = await res.json();
 //         if (data.success) {
 //           setOrders(data.orders);
@@ -62,7 +62,7 @@ const ViewPastOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/user/${userId}`);
+        const res = await fetch(`http://localhost:5001/api/user/${userId}`);
         const data = await res.json();
         if (data.success) {
           setOrders(data.orders);

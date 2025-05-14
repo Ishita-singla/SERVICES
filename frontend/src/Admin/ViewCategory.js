@@ -6,7 +6,7 @@ const ViewCategory = () => {
   
     const [items,setitems]=useState([]);
     useEffect(()=>{
-        fetch("http://localhost:5000/api/viewcategory")
+        fetch("http://localhost:5001/api/viewcategory")
         .then(response=>response.json())
         // .then(data=>console.log(data))
         .then(data=>setitems(data))
@@ -19,7 +19,7 @@ const ViewCategory = () => {
        categoryid:categoryid,
       })
       try{
-        const response=await fetch("http://localhost:5000/api/deletecategory",{
+        const response=await fetch("http://localhost:5001/api/deletecategory",{
           headers:{"Content-type":"application/json"},
           method:"Post",
           body:formdata

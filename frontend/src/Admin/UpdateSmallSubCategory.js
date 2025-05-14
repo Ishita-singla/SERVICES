@@ -27,7 +27,7 @@ const UpdateSmallSubCategory = () => {
 
 
       });
-           fetch(`http://localhost:5000/api/smallsubcategory`,{
+           fetch(`http://localhost:5001/api/smallsubcategory`,{
               headers:{
                   "Content-type":"application/json"
               },
@@ -117,7 +117,7 @@ const UpdateSmallSubCategory = () => {
         }
         alert("Submitting sub-Category...");
         try {
-            const response = await fetch("http://localhost:5000/api/updatesmallsubcategory", {
+            const response = await fetch("http://localhost:5001/api/updatesmallsubcategory", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ categoryid,subcategoryid,smallsubcategoryid,smallsubcategoryname: smallsubcategorytitle, smallsubcategoryimage: photourl ,smallsubcategorycontent:smallsubcategorycontent,Price : Price}), // Fix Here

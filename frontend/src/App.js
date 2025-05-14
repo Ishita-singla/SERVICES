@@ -34,6 +34,9 @@ import Getorders from "./Admin/GetOrders";
 import ViewPastOrders from "./components/ViewPastOrders";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
+import GetAllUser from "./Admin/Getalluser";
+import ViewSlider from "./components/ViewSlider";
+import Checkout from "./components/CheckOut";
 
 // import AdminRoute from "./ProtectedRoutes/AdminRoute";  // 👈 import route
 
@@ -52,6 +55,7 @@ function App() {
         {/* ✅ Navbar + Footer only for Home */}
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
+          <Route path="category/:category" element={<ViewSlider></ViewSlider>}></Route>
           <Route path="" element={<Footer />} />
           <Route path="frontblogs" element={<Blogs/>}/>
           <Route path="viewaddtocart" element={<ViewAddtocart/>}/>
@@ -63,7 +67,10 @@ function App() {
 
 
 
+
         </Route>
+        <Route path="Checkout/:userId" element={<Checkout />} />                    
+
 
         
 
@@ -117,11 +124,11 @@ function App() {
   <Route path="updatecategory/:id" element={<UpdateCategory></UpdateCategory>}></Route>
   <Route path="updatesubcategory/:categoryid/:subcategoryid" element={<UpdateSubCategory></UpdateSubCategory>}></Route>
    //jhan pr jo id ke names hoa woh states vale hai
-   <Route path="updatesmallsubcategory/:categoryid/:subcategoryid/:smallsubcategoryid" element={<UpdateSmallSubCategory></UpdateSmallSubCategory>}></Route>
+   <Route path="updatesmallsubcategory/:categoryid/:subcategoryid/:smallsubcategoryid" element={<UpdateSmallSubCategory></UpdateSmallSubCategory>}></Route>*/}
 
 
 
-    <Route path="profile" element={<Profile/>}></Route> */}
+    <Route path="profile" element={<Profile/>}></Route>
 
     {/* replace wth */}
     <Route path="/admin" element={
@@ -141,6 +148,9 @@ function App() {
   <Route path="updatesmallsubcategory/:categoryid/:subcategoryid/:smallsubcategoryid" element={<UpdateSmallSubCategory />} />
   <Route path="vieworders" element={<ViewOrders/>}></Route>
   <Route path="getordersinadmin" element={<Getorders></Getorders>}></Route>
+  <Route path="viewusers" element={<GetAllUser/>}></Route>
+
+
 </Route>
 
 

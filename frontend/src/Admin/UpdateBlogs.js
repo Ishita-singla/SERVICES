@@ -17,7 +17,7 @@ const UpdateBlogs = () => {
     const formData = JSON.stringify({
         id:id
     });
-         fetch(`http://localhost:5000/api/blogdetail`,{
+         fetch(`http://localhost:5001/api/blogdetail`,{
             headers:{
                 "Content-type":"application/json"
             },
@@ -106,7 +106,7 @@ setContent(items.content);
        alert("Submitting Blog..."); // Show alert before submission
       try {
        
-            const response = await fetch("http://localhost:5000/api/updateblog", {
+            const response = await fetch("http://localhost:5001/api/updateblog", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({id, title, content, photo: photourl }),

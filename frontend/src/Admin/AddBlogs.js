@@ -52,7 +52,7 @@ const AddBlogs = () => {
        alert("Submitting Blog..."); // Show alert before submission
       try {
        
-            const response = await fetch("http://localhost:5000/api/insertblog", {
+            const response = await fetch("http://localhost:5001/api/insertblog", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ title, content, photo: photourl }),

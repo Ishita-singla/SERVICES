@@ -21,7 +21,7 @@ function Services() {
   }
 
   useEffect(()=>{
-    fetch("http://localhost:5000/api/categories")
+    fetch("http://localhost:5001/api/categories")
     .then((response)=>response.json())
     .then((data)=>setCategories(data))
     .catch((error) => console.error("Error fetching categories:", error));

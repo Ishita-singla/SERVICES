@@ -11,7 +11,7 @@ export default function BlogDetail() {
             id
         });
     
-        fetch(`http://localhost:5000/api/blogdetail`, {
+        fetch(`http://localhost:5001/api/blogdetail`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

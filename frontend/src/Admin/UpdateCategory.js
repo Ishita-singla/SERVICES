@@ -16,7 +16,7 @@ const UpdateCategory = () => {
       const formData = JSON.stringify({
           id:id
       });
-           fetch(`http://localhost:5000/api/category`,{
+           fetch(`http://localhost:5001/api/category`,{
               headers:{
                   "Content-type":"application/json"
               },
@@ -93,7 +93,7 @@ const UpdateCategory = () => {
         }
         alert("Submitting Category...");
         try {
-            const response = await fetch("http://localhost:5000/api/updatecategory", {
+            const response = await fetch("http://localhost:5001/api/updatecategory", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ id,categoryname: categorytitle, categoryimage: photourl }), // Fix Here

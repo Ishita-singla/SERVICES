@@ -8,7 +8,7 @@ const Blogs = () => {
     
     const fetchData=async()=>{
         try{
-            const response=await axios.get("http://localhost:5000/api/viewblogs");
+            const response=await axios.get("http://localhost:5001/api/viewblogs");
             console.log("blog data",response.data);
             setItems(response.data);
         }catch(err){
@@ -24,7 +24,7 @@ const Blogs = () => {
         if (!window.confirm("Are you sure you want to delete this blog?")) return;
 
         try {
-            await axios.delete(`http://localhost:5000/api/deleteblogs/${id}`);
+            await axios.delete(`http://localhost:5001/api/deleteblogs/${id}`);
             alert("Blog deleted successfully!");
             setItems(items.filter((item) => item._id !== id));
         } catch (error) {

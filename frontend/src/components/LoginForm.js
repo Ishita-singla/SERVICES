@@ -10,12 +10,12 @@ const LoginForm = () => {
     const [password,setPassword]=useState("");
     const navigate=useNavigate();
 
-    useEffect(() => {
-      const user = localStorage.getItem("Email");
-      if (user) {
-          navigate("/"); 
-      }
-  }, []);
+  //   useEffect(() => {
+  //     const user = localStorage.getItem("Email");
+  //     if (!user) {
+  //         navigate("/"); 
+  //     }
+  // }, []);
 
 
     useEffect(() => {
@@ -77,7 +77,7 @@ const generateCaptcha = () => {
     }
 
       try{
-        const response=await fetch("http://localhost:5000/api/login",{
+        const response=await fetch("http://localhost:5001/api/login",{
           method:"POST",
           headers:{
             "Content-type":"application/json"

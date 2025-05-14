@@ -6,7 +6,7 @@ const ViewBlogs = () => {
   
     const [items,setitems]=useState([]);
     useEffect(()=>{
-        fetch("http://localhost:5000/api/viewblogs")
+        fetch("http://localhost:5001/api/viewblogs")
         .then(response=>response.json())
         // .then(data=>console.log(data))
         .then(data=>setitems(data))
@@ -19,7 +19,7 @@ const ViewBlogs = () => {
         blogid:blogid,
       })
       try{
-        const response=await fetch("http://localhost:5000/api/deleteblog",{
+        const response=await fetch("http://localhost:5001/api/deleteblog",{
           headers:{"Content-type":"application/json"},
           method:"Post",
           body:formdata

@@ -82,7 +82,7 @@ const Categories = () => {
         }
         alert("Submitting Category...");
         try {
-            const response = await fetch("http://localhost:5000/api/insertcategory", {
+            const response = await fetch("http://localhost:5001/api/insertcategory", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ categoryname: categorytitle, categoryimage: photourl }), // Fix Here

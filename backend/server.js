@@ -8,7 +8,7 @@ const dotenv=require("dotenv");
 
 const app = express();
 const colors=require("colors");
-const port =5000;
+const port =5001;
 
 require('dotenv').config();
 
